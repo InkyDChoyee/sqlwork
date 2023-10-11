@@ -12,7 +12,8 @@ CREATE TABLE employee(
 INSERT INTO employee(empid, empname, age, deptid)
 VALUES (101, '이강', 27, 10);
 INSERT INTO employee(empid, empname, age, deptid)
-VALUES (102, '김산', 34, 30);  -- 부서코드가 30이라면 부서코드가 없어서 외래키 제약조건 위배
+-- 부서코드가 30이라면 부서코드가 없어서 외래키 제약조건 위배, 삽입 이상
+VALUES (102, '김산', 34, 30);  
 INSERT INTO employee(empid, empname, deptid)
 VALUES (103, '정들', 20);
 INSERT INTO employee(empid, empname, age, deptid)
@@ -40,6 +41,11 @@ WHERE deptid = 20;
 SELECT * FROM employee
 WHERE age IS NULL;
 
+-- 문자열 검색(사원 이름에서 '강'이 들어있는 사원 검색) => LIKE '%문자열%'
+SELECT * FROM employee
+WHERE empname LIKE '%강%' OR age IS NULL;  -- AND, OR 사용 가능
+SELECT * FROM employee
+WHERE empname LIKE '%강%' AND age IS NULL;  -- AND, OR 사용 가능
 
 COMMIT;
 
