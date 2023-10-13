@@ -32,7 +32,6 @@ GROUP BY custid
     HAVING COUNT(*) >= 3
     AND SUM(saleprice) >= 35000;
 
-
 -- 도서중에서 최대가격, 최저가격 알기
 SELECT MAX(price) 최고가격, MIN(price) 최저가격
 FROM book;
