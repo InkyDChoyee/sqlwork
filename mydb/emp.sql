@@ -62,6 +62,13 @@ SELECT ename 사원이름,
           ROUND((salary / 30), 1) 일급3
 FROM emp;
 
+-- 급여가 가장 많은 사원과 가장 적은 사원을 검색하시오
+-- MAX(SALARY)
+-- 서브쿼리(subquary)
+SELECT emp.ename, emp.salary
+FROM emp
+WHERE salary = (SELECT MAX(salary) FROM emp) 
+     OR salary = (SELECT MIN(salary) FROM emp);
 
 
 

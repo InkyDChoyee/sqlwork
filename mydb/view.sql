@@ -22,3 +22,21 @@ COMMIT;
 
 -- VIEW 삭제
 DROP VIEW vw_customer;
+
+
+-- 고객과 고객의 주문에 관한 정보를 검색
+-- 검색한 정보로 뷰 만들기
+CREATE VIEW vw_book_order AS       -- view 로 만드는 방법
+SELECT cs.name, bk.bookname, od.saleprice
+FROM book bk, customer cs, orders od 
+WHERE bk.bookid = od.bookid
+   AND cs.custid = od.custid
+ORDER BY cs.name;
+
+SELECT * FROM vw_book_order;
+
+SELECT COUNT(*)
+FROM vw_book_order;
+
+
+COMMIT;
