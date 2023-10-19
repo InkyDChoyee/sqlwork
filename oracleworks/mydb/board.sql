@@ -3,7 +3,7 @@ CREATE TABLE board(
     bno          NUMBER PRIMARY KEY,
     btitle         VARCHAR2(100) NOT NULL,
     bcontent    CLOB NOT NULL,                  -- CLOB(Character Large Of Byte)
-    bwriter      VARCHAR2(50) NOT NULL,
+    bwriter      VARCHAR2(50) NOT NULL, 
     bdate        DATE DEFAULT SYSDATE        -- 게시글 추가시 자동으로 추가됨
 );
 
