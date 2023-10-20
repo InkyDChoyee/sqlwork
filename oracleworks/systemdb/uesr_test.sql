@@ -13,3 +13,4 @@ GRANT CONNECT, DBA TO c##test;
 DROP TABLE test;
 
 COMMIT;
+
