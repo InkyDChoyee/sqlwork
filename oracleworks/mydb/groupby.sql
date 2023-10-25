@@ -39,6 +39,8 @@ COMMIT;
 
 
 SELECT * FROM employee;
+SELECT * FROM department;
+
 
 -- 부서별 급여 총액을 구하시오
 SELECT deptno, SUM(sal) 

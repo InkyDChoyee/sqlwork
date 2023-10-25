@@ -19,6 +19,12 @@ VALUES (seq.NEXTVAL, '가입 인사', '안녕하세요~ 만나서 반갑습니�
 INSERT INTO board (bno, btitle, bcontent, bwriter)
 VALUES (seq.NEXTVAL, '공지 사항', '천장 에어컨 청소합니다', 'admin0000');
 
+-- 재귀 복사
+INSERT INTO board (bno, btitle, bcontent, bwriter)
+(SELECT seq.NEXTVAL, btitle, bcontent, bwriter FROM board);
+
+
+
 TRUNCATE TABLE board;
 
 ROLLBACK;
