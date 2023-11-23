@@ -10,6 +10,7 @@ CREATE TABLE addrbook(
 
 CREATE SEQUENCE seq_bnum NOCACHE;    -- 자동 순번
 
+-- 테스트 데이터 넣기
 INSERT INTO addrbook(bnum, username, tel, email, gender)
 VALUES(seq_bnum.NEXTVAL, '이순신', '010-1212-1212', 'ship12@naver.com', '남');
 
@@ -19,4 +20,15 @@ VALUES(seq_bnum.NEXTVAL, '김시민', '010-1234-1234', 'ship12@naver.com', '남'
 
 SELECT * FROM addrbook;
 
+-- 이메일 khit@kh.kr 찾기
+SELECT email FROM addrbook
+WHERE email = 'khit@kh.kr';
+
+
+
+
 COMMIT;
+
+DROP TABLE addrbook;
+
+DROP SEQUENCE seq_bnum;
