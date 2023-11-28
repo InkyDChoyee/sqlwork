@@ -24,6 +24,13 @@ SELECT * FROM addrbook;
 SELECT email FROM addrbook
 WHERE email = 'khit@kh.kr';
 
+-- 특정 주소 삭제 테스트
+DELETE FROM addrbook WHERE bnum = 7;
+
+-- 주소 수정 테스트
+UPDATE addrbook SET username = '테스터2', tel ='010-9999-9999', gender='여'
+WHERE bnum = 12;
+
 
 
 
