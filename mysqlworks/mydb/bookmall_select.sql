@@ -64,4 +64,23 @@ select * from book
 where price = (select max(price) from book);
 
 -- 주문 테이블에서 주문 가격의 총 판매액을 구하시오
-select sum(saleprice) 총판매액 from orders;
+select sum(saleprice) 총판매액, 
+	   round(avg(saleprice), 0) 평균액
+from orders;
+
+-- 고객별 주문한 도서의 총 판매액 검색
+select custid 고객번호, 
+	   count(bookid) 책수량, 
+       sum(saleprice) 총금액
+from orders
+group by custid;
+
+-- 도서를 3권 이상 구매한 고객 검색
+select custid 고객번호, 
+	   count(bookid) 책수량, 
+       sum(saleprice) 총금액
+from orders
+group by custid
+having count(bookid) >= 3;
+
+-- 
